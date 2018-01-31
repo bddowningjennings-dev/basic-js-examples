@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="style.css")
+    title headscroll
+  body
+    h1 This is HeadScroll!!
+    form(action="/user" method="post")
+      input(type="text", placeholder="Name", name="name")
+      input(type="text", placeholder="Age", name="age")
+      input(type="submit", value="Submit")
+    p #{users}
+    ul
+      each user in users
+        li Name: #{user.name} and Age: #{user.age}

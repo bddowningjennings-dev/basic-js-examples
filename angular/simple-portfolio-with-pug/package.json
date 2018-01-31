@@ -1,0 +1,17 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "personal portolio",
+  "main": "script.js",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta",
+    "express": "^4.16.1",
+    "jquery": "^3.2.1",
+    "pug": "^2.0.0-rc.4"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "keywords": [],
+  "author": "Blane Downing-Jennings",
+  "license": "ISC"
+}

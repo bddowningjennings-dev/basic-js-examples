@@ -1,0 +1,44 @@
+    if (req.query.filter) {
+      let filter = JSON.parse(req.query.filter)
+      let tag = "$in"
+      for (let each in filter.tags) {
+        tag = each;
+      }
+      filter = {
+        ...filter,
+        tags: {[tag]: filter.tags[tag].map(each => new RegExp(each))}
+      }
+      return Card.find(filter, (err, cards) =>
+      err ? res.json(err) : res.json(cards))
+    }
+    return Card.find(req.query, (err, cards) =>
+      err ? res.json(err) : res.json(cards))
+  }
+
+    componentWillMount() {
+    fetch('http://localhost:5000/cards')
+    .then(res => res.json())
+    .then(cards => {
+      this.setState({ cards })})
+    .catch(err => console.log(err))
+  }
+
+  addCard = (val) => {
+    this.setState({cards: [...this.state.cards, val]})
+  }
+    removeCard = (_id) => {
+    fetch(`http://localhost:5000/cards/${_id}`, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'DELETE'
+    })
+    .then(res => res.json())
+    .then(card => {
+      this.setState({ cards: this.state.cards.filter(el => el._id !== card._id)})
+    })
+    .catch(err => console.log(err))   
+  }
+  filterCards = (cards) => {
+    this.setState({cards: [...cards]})    
+  }

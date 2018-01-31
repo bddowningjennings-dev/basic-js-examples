@@ -1,0 +1,14 @@
+doctype html  
+html(lang='en')
+  head
+    title= title
+    link(rel="stylesheet", href="css/bootstrap.min.css")
+    link(rel="stylesheet", href="css/style.css")
+    script(src="script/jquery.min.js")
+    script(src="script/script.js")
+  body
+    div.container
+      div.jumbotron
+        h1 #{msg} - hihi
+        each user in users
+          p.tab #{user.name}

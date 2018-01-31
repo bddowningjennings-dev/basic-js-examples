@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.row {
+  margin-top: 50px;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  background-color: rgb(235, 224, 133);
+}
+button {
+  font-size: 1.2em;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  background-color: rgb(115, 187, 115);
+  border-radius: 13px;
+}
+button:hover {
+  background-color: rgb(95, 153, 95);  
+}
+#quote {
+  margin-top: 50px;
+}
+:focus {
+  outline: none;
+}
+::-moz-focus-inner {
+  border: 0;
+}
